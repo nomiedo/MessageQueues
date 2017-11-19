@@ -1,6 +1,6 @@
 ﻿using Topshelf;
 
-namespace WSFilesArchivator
+namespace ServerArchivator
 {
     class Program
     {
@@ -17,7 +17,7 @@ namespace WSFilesArchivator
                 x.StartAutomaticallyDelayed();
                 x.RunAsLocalService();
                 x.EnableServiceRecovery(r => r.RestartService(0).RestartService(1));
-            }); 
+            });
         }
     }
 }
