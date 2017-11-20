@@ -16,3 +16,11 @@ d:\TESTPRO\WindowsService\WSFilesArchivator\obj\Debug\WSFilesArchivator.csprojRe
 E:\Mentoring\MessageQueues\WSFilesArchivator\bin\Debug\WSFilesArchivator.exe.config
 E:\Mentoring\MessageQueues\WSFilesArchivator\obj\Debug\WSFilesArchivator.exe
 E:\Mentoring\MessageQueues\WSFilesArchivator\obj\Debug\WSFilesArchivator.pdb
+d:\TESTPRO\MessageQueues\WSFilesArchivator\bin\Debug\WSFilesArchivator.exe.config
+d:\TESTPRO\MessageQueues\WSFilesArchivator\obj\Debug\WSFilesArchivator.exe
+d:\TESTPRO\MessageQueues\WSFilesArchivator\obj\Debug\WSFilesArchivator.pdb
+d:\TESTPRO\MessageQueues\WSFilesArchivator\bin\Debug\WSFilesArchivator.exe
+d:\TESTPRO\MessageQueues\WSFilesArchivator\bin\Debug\WSFilesArchivator.pdb
+d:\TESTPRO\MessageQueues\WSFilesArchivator\bin\Debug\Topshelf.dll
+d:\TESTPRO\MessageQueues\WSFilesArchivator\bin\Debug\Topshelf.xml
+d:\TESTPRO\MessageQueues\WSFilesArchivator\obj\Debug\WSFilesArchivator.csprojResolveAssemblyReference.cache

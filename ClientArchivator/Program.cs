@@ -8,7 +8,7 @@ namespace ClientArchivator
 {
     public class SequenceMessage
     {
-        public int Sequence { get; set; }
+        public Guid Sequence { get; set; }
         public int Position { get; set; }
         public byte[] Body { get; set; }
     }
@@ -17,26 +17,22 @@ namespace ClientArchivator
     {
         static void Main(string[] args)
         {
-            string queueName = System.Configuration.ConfigurationManager.AppSettings["QueueName"];
-            string resourceFolderPath = System.Configuration.ConfigurationManager.AppSettings["ResourceFilePath"];
+            string queueName = ConfigurationManager.AppSettings["QueueName"];
+            string resourceFolderPath = ConfigurationManager.AppSettings["ResourceFilePath"];
             DirectoryInfo resourceDirectory = GetDirectoryWithValidation(resourceFolderPath);
             MessageQueue queue = GetQueue(queueName);
+            int bodySize = 1024 * 4;
 
-            if (resourceDirectory == null) ;
+            if (resourceDirectory == null)
                 return;
 
             foreach (var file in resourceDirectory.GetFiles("*.jpg"))
             {
-                FileStream FileStream = new FileStream(file.FullName, System.IO.FileMode.Open);
-                byte[] binary = ReadFully(FileStream);
-                SequenceMessage message = new SequenceMessage()
-                {
-                    Sequence = 1,
-                    Position = 1,
-                    Body = binary
-                };
-
-                queue.Send(message);
+                FileStream FileStream = new FileStream(file.FullName, FileMode.Open);
+                byte[] bytes = GetByteArray(FileStream);
+                List<byte[]> listBytes = SplitByteArray(bytes, bodySize);
+                List<SequenceMessage> batchMessages = CreateBatchMessages(listBytes);
+                SendMessagesUsingTransactions(queue, batchMessages);
             }
 
             Console.Read();
@@ -75,7 +71,27 @@ namespace ClientArchivator
             return queue;
         }
 
-        private static void SendMessagesUsingTransactions(MessageQueue queue, List<Message> meassges)
+        private static List<SequenceMessage> CreateBatchMessages(List<byte[]> listBytes)
+        {
+            var id = Guid.NewGuid();
+            var position = 0;
+            var result = new List<SequenceMessage>();
+
+            foreach (var bytes in listBytes)
+            {
+                SequenceMessage message = new SequenceMessage
+                {
+                    Sequence = id,
+                    Position = position,
+                    Body = bytes
+                };
+                position++;
+                result.Add(message);
+            }
+            return result;
+        }
+
+        private static void SendMessagesUsingTransactions(MessageQueue queue, List<SequenceMessage> meassges)
         {
             using (var trans = new MessageQueueTransaction())
             {
@@ -88,7 +104,7 @@ namespace ClientArchivator
             }
         }
 
-        public static byte[] ReadFully(Stream input)
+        public static byte[] GetByteArray(Stream input)
         {
             byte[] buffer = new byte[16 * 1024];
             using (MemoryStream ms = new MemoryStream())
@@ -102,5 +118,16 @@ namespace ClientArchivator
             }
         }
 
+        public static List<byte[]> SplitByteArray(byte[] source, int size)
+        {
+            List<byte[]> result = new List<byte[]>();
+            for (int i = 0; i < source.Length; i += size)
+            {
+                byte[] buffer = new byte[size];
+                Buffer.BlockCopy(source, i, buffer, 0, size);
+                result.Add(buffer);
+            }
+            return result;
+        }
     }
 }

@@ -1,0 +1,8 @@
+d:\TESTPRO\MessageQueues\ClientArchivator\bin\Debug\ClientArchivator.exe.config
+d:\TESTPRO\MessageQueues\ClientArchivator\bin\Debug\ClientArchivator.exe
+d:\TESTPRO\MessageQueues\ClientArchivator\bin\Debug\ClientArchivator.pdb
+d:\TESTPRO\MessageQueues\ClientArchivator\bin\Debug\Topshelf.dll
+d:\TESTPRO\MessageQueues\ClientArchivator\bin\Debug\Topshelf.xml
+d:\TESTPRO\MessageQueues\ClientArchivator\obj\Debug\ClientArchivator.csprojResolveAssemblyReference.cache
+d:\TESTPRO\MessageQueues\ClientArchivator\obj\Debug\ClientArchivator.exe
+d:\TESTPRO\MessageQueues\ClientArchivator\obj\Debug\ClientArchivator.pdb
