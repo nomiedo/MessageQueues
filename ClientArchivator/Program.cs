@@ -28,7 +28,7 @@ namespace ClientArchivator
             string resourceFolderPath = ConfigurationManager.AppSettings["ResourceFilePath"];
             DirectoryInfo resourceDirectory = GetDirectoryWithValidation(resourceFolderPath);
             MessageQueue queue = GetQueue(queueName);
-            int bodySize = (1024 * 4);
+            int messageSize = (1024 * 4);
 
             
             if (resourceDirectory == null)
@@ -39,8 +39,8 @@ namespace ClientArchivator
             {
                 byte[] bytes = File.ReadAllBytes(file.FullName);
                 List<byte[]> listBytes = new List<byte[]>();
-                if (bytes.Length > bodySize)
-                    listBytes = SplitByteArray(bytes, bodySize);
+                if (bytes.Length > messageSize)
+                    listBytes = SplitByteArray(bytes, messageSize);
                 else
                     listBytes.Add(bytes);
 

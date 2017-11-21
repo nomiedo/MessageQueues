@@ -1,6 +1,6 @@
 ﻿using Topshelf;
 
-namespace ServerArchivator
+namespace ArchiveClient
 {
     class Program
     {
@@ -8,9 +8,9 @@ namespace ServerArchivator
         {
             HostFactory.Run(x =>
             {
-                x.Service<ArchiveService>(conf =>
+                x.Service<ArchiveClient>(conf =>
                 {
-                    conf.ConstructUsing(() => new ArchiveService());
+                    conf.ConstructUsing(() => new ArchiveClient());
                     conf.WhenStarted(s => s.Start());
                     conf.WhenStopped(s => s.Stop());
                 });

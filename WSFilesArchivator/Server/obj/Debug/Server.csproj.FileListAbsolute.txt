@@ -1,0 +1,7 @@
+D:\TESTPRO\MessageQueues\WSFilesArchivator\Server\bin\Debug\Server.exe.config
+D:\TESTPRO\MessageQueues\WSFilesArchivator\Server\bin\Debug\Server.exe
+D:\TESTPRO\MessageQueues\WSFilesArchivator\Server\bin\Debug\Server.pdb
+D:\TESTPRO\MessageQueues\WSFilesArchivator\Server\bin\Debug\Topshelf.dll
+D:\TESTPRO\MessageQueues\WSFilesArchivator\Server\bin\Debug\Topshelf.xml
+D:\TESTPRO\MessageQueues\WSFilesArchivator\Server\obj\Debug\Server.exe
+D:\TESTPRO\MessageQueues\WSFilesArchivator\Server\obj\Debug\Server.pdb

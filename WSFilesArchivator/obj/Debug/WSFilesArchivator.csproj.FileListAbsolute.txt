@@ -23,4 +23,4 @@ d:\TESTPRO\MessageQueues\WSFilesArchivator\bin\Debug\WSFilesArchivator.exe
 d:\TESTPRO\MessageQueues\WSFilesArchivator\bin\Debug\WSFilesArchivator.pdb
 d:\TESTPRO\MessageQueues\WSFilesArchivator\bin\Debug\Topshelf.dll
 d:\TESTPRO\MessageQueues\WSFilesArchivator\bin\Debug\Topshelf.xml
-d:\TESTPRO\MessageQueues\WSFilesArchivator\obj\Debug\WSFilesArchivator.csprojResolveAssemblyReference.cache
+D:\TESTPRO\MessageQueues\WSFilesArchivator\obj\Debug\WSFilesArchivator.csprojResolveAssemblyReference.cache

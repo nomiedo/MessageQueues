@@ -1,0 +1,7 @@
+D:\TESTPRO\MessageQueues\WSFilesArchivator\Client\bin\Debug\ArchiveClient.exe.config
+D:\TESTPRO\MessageQueues\WSFilesArchivator\Client\bin\Debug\ArchiveClient.exe
+D:\TESTPRO\MessageQueues\WSFilesArchivator\Client\bin\Debug\ArchiveClient.pdb
+D:\TESTPRO\MessageQueues\WSFilesArchivator\Client\bin\Debug\Topshelf.dll
+D:\TESTPRO\MessageQueues\WSFilesArchivator\Client\bin\Debug\Topshelf.xml
+D:\TESTPRO\MessageQueues\WSFilesArchivator\Client\obj\Debug\ArchiveClient.exe
+D:\TESTPRO\MessageQueues\WSFilesArchivator\Client\obj\Debug\ArchiveClient.pdb
