@@ -1,0 +1,10 @@
+D:\TESTPRO\MessageQueueServices\ArchServer\bin\Debug\ArchServer.exe.config
+D:\TESTPRO\MessageQueueServices\ArchServer\bin\Debug\ArchServer.exe
+D:\TESTPRO\MessageQueueServices\ArchServer\bin\Debug\ArchServer.pdb
+D:\TESTPRO\MessageQueueServices\ArchServer\bin\Debug\ServiceHelper.dll
+D:\TESTPRO\MessageQueueServices\ArchServer\bin\Debug\Topshelf.dll
+D:\TESTPRO\MessageQueueServices\ArchServer\bin\Debug\ServiceHelper.pdb
+D:\TESTPRO\MessageQueueServices\ArchServer\bin\Debug\Topshelf.xml
+D:\TESTPRO\MessageQueueServices\ArchServer\obj\Debug\ArchServer.csprojResolveAssemblyReference.cache
+D:\TESTPRO\MessageQueueServices\ArchServer\obj\Debug\ArchServer.exe
+D:\TESTPRO\MessageQueueServices\ArchServer\obj\Debug\ArchServer.pdb

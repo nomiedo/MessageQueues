@@ -1,0 +1,5 @@
+D:\TESTPRO\MessageQueueServices\ServiceHelper\bin\Debug\ServiceHelper.dll
+D:\TESTPRO\MessageQueueServices\ServiceHelper\bin\Debug\ServiceHelper.pdb
+D:\TESTPRO\MessageQueueServices\ServiceHelper\obj\Debug\ServiceHelper.csprojResolveAssemblyReference.cache
+D:\TESTPRO\MessageQueueServices\ServiceHelper\obj\Debug\ServiceHelper.dll
+D:\TESTPRO\MessageQueueServices\ServiceHelper\obj\Debug\ServiceHelper.pdb

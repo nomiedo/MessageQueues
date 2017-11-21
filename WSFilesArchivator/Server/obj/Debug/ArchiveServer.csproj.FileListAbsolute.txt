@@ -5,3 +5,4 @@ D:\TESTPRO\MessageQueues\WSFilesArchivator\Server\bin\Debug\Topshelf.dll
 D:\TESTPRO\MessageQueues\WSFilesArchivator\Server\bin\Debug\Topshelf.xml
 D:\TESTPRO\MessageQueues\WSFilesArchivator\Server\obj\Debug\ArchiveServer.exe
 D:\TESTPRO\MessageQueues\WSFilesArchivator\Server\obj\Debug\ArchiveServer.pdb
+D:\TESTPRO\MessageQueues\WSFilesArchivator\Server\obj\Debug\ArchiveServer.csprojResolveAssemblyReference.cache

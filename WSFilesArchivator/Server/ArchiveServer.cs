@@ -39,7 +39,7 @@ namespace Server
 
         public bool Start()
         {
-            timer.Change(0, 3000);
+            timer.Change(0, 300000);
             return true;
         }
 
@@ -57,8 +57,8 @@ namespace Server
         {
             lock (_sync)
             {
-                currentTask = Task.Factory.StartNew(() =>
-                {
+               currentTask = Task.Factory.StartNew(() =>
+               {
                     List<SequanceMessage> messages = ReceiveMessagesUsingPeek(queue);
 
                     foreach (var list in messages.OrderBy(m => m.Position).GroupBy(m => m.SequanceId))
@@ -73,8 +73,8 @@ namespace Server
                         string path = resultDirectory + list.Select(m => m.Label).First();
                         AppendAllBytes(path, rv);
                         Archivation();
-                    }
-                });
+                   }
+               });
             }
         }
 
@@ -140,10 +140,7 @@ namespace Server
         {
             List<SequanceMessage> result = new List<SequanceMessage>();
 
-            var asyncReceive = queue.BeginPeek();
-
             var enumerator = queue.GetMessageEnumerator2();
-
             while (enumerator.MoveNext())
             {
                 if (enumerator.Current != null)
@@ -157,8 +154,8 @@ namespace Server
                 }
             }
 
-            queue.EndPeek(asyncReceive);
-            queue.Purge();
+            if(result.Any())
+               queue.Purge();
 
             return result;
         }

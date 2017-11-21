@@ -1,0 +1,1 @@
+D:\TESTPRO\MessageQueueServices\MessageQueueServices\bin\Debug\MessageQueueServices.exe.config
