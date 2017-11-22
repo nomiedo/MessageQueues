@@ -73,9 +73,6 @@ namespace ServiceHelper
                 }
             }
 
-            if (result.Any())
-                queue.Purge();
-
             return result;
         }
     }

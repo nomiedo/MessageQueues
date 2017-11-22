@@ -8,3 +8,13 @@ D:\TESTPRO\MessageQueueServices\MessageQueueServices\bin\Debug\Topshelf.xml
 D:\TESTPRO\MessageQueueServices\MessageQueueServices\obj\Debug\ArchClient.csprojResolveAssemblyReference.cache
 D:\TESTPRO\MessageQueueServices\MessageQueueServices\obj\Debug\ArchClient.exe
 D:\TESTPRO\MessageQueueServices\MessageQueueServices\obj\Debug\ArchClient.pdb
+d:\TESTPRO\MessageQueues\MessageQueueServices\MessageQueueServices\bin\Debug\ArchClient.exe.config
+d:\TESTPRO\MessageQueues\MessageQueueServices\MessageQueueServices\bin\Debug\ArchClient.exe
+d:\TESTPRO\MessageQueues\MessageQueueServices\MessageQueueServices\bin\Debug\ArchClient.pdb
+d:\TESTPRO\MessageQueues\MessageQueueServices\MessageQueueServices\bin\Debug\ServiceHelper.dll
+d:\TESTPRO\MessageQueues\MessageQueueServices\MessageQueueServices\bin\Debug\Topshelf.dll
+d:\TESTPRO\MessageQueues\MessageQueueServices\MessageQueueServices\bin\Debug\ServiceHelper.pdb
+d:\TESTPRO\MessageQueues\MessageQueueServices\MessageQueueServices\bin\Debug\Topshelf.xml
+d:\TESTPRO\MessageQueues\MessageQueueServices\MessageQueueServices\obj\Debug\ArchClient.csprojResolveAssemblyReference.cache
+d:\TESTPRO\MessageQueues\MessageQueueServices\MessageQueueServices\obj\Debug\ArchClient.exe
+d:\TESTPRO\MessageQueues\MessageQueueServices\MessageQueueServices\obj\Debug\ArchClient.pdb

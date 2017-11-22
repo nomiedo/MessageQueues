@@ -49,7 +49,8 @@ namespace ServiceHelper
             {
                 if (!re.IsMatch(file.Name))
                 {
-                    file.MoveTo(wrongDirectory.Name + file.Name);
+                    var tName = wrongDirectory.ToString() + file.Name;
+                    file.MoveTo(tName);
                     continue;
                 }
 
@@ -62,13 +63,15 @@ namespace ServiceHelper
 
                 if (row - fileIndex != 1 && fileIndex > 0)
                 {
-                    CreateArchive(batch, resourceDirectory.Name);
+                    CreateArchive(batch, resourceDirectory.ToString());
                     batch.Clear();
                 }
 
                 batch.Add(file);
                 fileIndex = row;
             }
+            CreateArchive(batch, resourceDirectory.ToString());
+            batch.Clear();
         }
 
         public void CreateArchive(List<FileInfo> files, string path)
@@ -78,7 +81,6 @@ namespace ServiceHelper
             {
                 foreach (var file in files)
                 {
-                    Thread.Sleep(1000);
                     newFile.CreateEntryFromFile(file.FullName, file.Name);
                 }
             }
@@ -91,7 +93,6 @@ namespace ServiceHelper
         public void AppendAllBytes(string path, byte[] bytes)
         {
             //argument-checking here.
-
             using (var stream = new FileStream(path, FileMode.Append))
             {
                 stream.Write(bytes, 0, bytes.Length);
