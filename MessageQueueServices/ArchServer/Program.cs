@@ -1,6 +1,6 @@
 ﻿using Topshelf;
 
-namespace Server
+namespace ArchServer
 {
     class Program
     {
@@ -8,9 +8,9 @@ namespace Server
         {
             HostFactory.Run(x =>
             {
-                x.Service<ArchiveServer>(conf =>
+                x.Service<ArchServer>(conf =>
                 {
-                    conf.ConstructUsing(() => new ArchiveServer());
+                    conf.ConstructUsing(() => new ArchServer());
                     conf.WhenStarted(s => s.Start());
                     conf.WhenStopped(s => s.Stop());
                 });

@@ -1,8 +1,0 @@
-D:\TESTPRO\MessageQueues\WSFilesArchivator\Client\bin\Debug\Client.exe.config
-D:\TESTPRO\MessageQueues\WSFilesArchivator\Client\bin\Debug\Client.exe
-D:\TESTPRO\MessageQueues\WSFilesArchivator\Client\bin\Debug\Client.pdb
-D:\TESTPRO\MessageQueues\WSFilesArchivator\Client\bin\Debug\Topshelf.dll
-D:\TESTPRO\MessageQueues\WSFilesArchivator\Client\bin\Debug\Topshelf.xml
-D:\TESTPRO\MessageQueues\WSFilesArchivator\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
-D:\TESTPRO\MessageQueues\WSFilesArchivator\Client\obj\Debug\Client.exe
-D:\TESTPRO\MessageQueues\WSFilesArchivator\Client\obj\Debug\Client.pdb

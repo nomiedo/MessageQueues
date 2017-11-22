@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Messaging;
+using System.Threading;
 
 namespace ServiceHelper
 {
@@ -20,7 +20,7 @@ namespace ServiceHelper
             return queue;
         }
 
-        public List<SequanceMessage> CreateBatchMessages(List<byte[]> listBytes, string fileName)
+        public List<SequanceMessage> CreateBatchFileMessages(List<byte[]> listBytes, string fileName, Guid clientId)
         {
             var sequenceId = Guid.NewGuid();
             var position = 0;
@@ -30,16 +30,39 @@ namespace ServiceHelper
             {
                 SequanceMessage message = new SequanceMessage
                 {
+                    ClientId = clientId,
                     Label = fileName,
                     SequanceId = sequenceId,
+                    MessageType = MessageType.File,
                     Position = position,
-                    Parts = listBytes.Count,
                     Body = bytes
                 };
                 position++;
                 result.Add(message);
             }
             return result;
+        }
+
+        public void SendStatus(MessageQueue queue, string status, Guid clientId)
+        {
+            SequanceMessage message = new SequanceMessage
+            {
+                ClientId = clientId,
+                Label = status,
+                MessageType = MessageType.ClientStatus,
+            };
+            SendMessagesUsingTransactions(queue, new List<SequanceMessage> { message });
+        }
+
+        public void SendSettings(MessageQueue queue, int settingValue, Guid clientId)
+        {
+            SequanceMessage message = new SequanceMessage
+            {
+                ClientId = clientId,
+                SettingValue = settingValue,
+                MessageType = MessageType.Setting
+            };
+            SendMessagesUsingTransactions(queue, new List<SequanceMessage> { message });
         }
 
         public void SendMessagesUsingTransactions(MessageQueue queue, List<SequanceMessage> meassges)
@@ -55,7 +78,7 @@ namespace ServiceHelper
             }
         }
 
-        public List<SequanceMessage> ReceiveMessagesUsingPeek(MessageQueue queue)
+        public List<SequanceMessage> ReceiveMessagesUsingEnumerator(MessageQueue queue)
         {
             List<SequanceMessage> result = new List<SequanceMessage>();
 
@@ -70,6 +93,25 @@ namespace ServiceHelper
                         var message = (SequanceMessage)resp.Body;
                         result.Add(message);
                     }
+                }
+            }
+
+            return result;
+        }
+
+        public List<SequanceMessage> ReceiveMessagesUsingPeek(MessageQueue queue, Guid clientId)
+        {
+            List<SequanceMessage> result = new List<SequanceMessage>();
+
+            var responces = queue.GetAllMessages();
+            foreach (var message in responces)
+            {
+                if (message?.Body is SequanceMessage)
+                {
+                    var tempMessage = (SequanceMessage)message.Body;
+                    if (tempMessage.ClientId != clientId) continue;
+                    var rMessage = queue.ReceiveById(message.Id);
+                    if (rMessage != null) result.Add((SequanceMessage) rMessage.Body);
                 }
             }
 

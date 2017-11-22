@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace ServiceHelper
 {
@@ -49,8 +47,16 @@ namespace ServiceHelper
             {
                 if (!re.IsMatch(file.Name))
                 {
-                    var tName = wrongDirectory.ToString() + file.Name;
-                    file.MoveTo(tName);
+                    try
+                    {
+                        var tName = wrongDirectory + file.Name;
+                        file.MoveTo(tName);
+                    }
+                    catch
+                    {
+                        Console.WriteLine("The same file name, file was deleted");
+                        DeleteFile(file);
+                    }                    
                     continue;
                 }
 
@@ -86,8 +92,13 @@ namespace ServiceHelper
             }
             foreach (var file in files)
             {
-                DoSeveralAttempts(() => file.Delete(), new TimeSpan(1000), 5);
+                DeleteFile(file);
             }
+        }
+
+        public void DeleteFile(FileInfo file)
+        {
+            DoSeveralAttempts(() => file.Delete(), new TimeSpan(1000), 5);
         }
 
         public void AppendAllBytes(string path, byte[] bytes)
